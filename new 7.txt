@@ -1,6 +1,10 @@
 Shell Scripts
-================
-bash (default working at bash )how is identify bash command (echo $0)
+================i
+
+
+
+
+1.bash (default working at bash )how is identify bash command (echo $0)
 sh (echo $0) sh
 csh
 tcsh
