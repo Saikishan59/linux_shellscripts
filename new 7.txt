@@ -1,0 +1,60 @@
+Shell Scripts
+================
+bash (default working at bash )how is identify bash command (echo $0)
+sh (echo $0) sh
+csh
+tcsh
+ps -p $$ (how to known shell command)
+echo $0 (go to shell like bash)
+echo $SHELL (Identify shell name bin/bash)
+/bin/sh (switch to sh shell)
+/bin/bash (switch to bash shell)
+varibale local (
+varible export ( global user excute name (we can use all the shells eg :export name=kishan echo $name)
+
+shell scripts topics
+====================
+shell meaning to instruct we are using which type of shell (eg: sh, ksh, bash, csh,tcsh)
+#!/ (shebang line)
+#!/bin/bash (started with dis line)
+
+Scripts
+==============
+#!/bin/bash
+
+# Set the threshold (80% in this case)
+threshold=80
+
+# Get current disk usage percentage
+disk_usage=$(df -h / | awk 'NR==2 {print $5}' | cut -d'%' -f1)
+
+# Check if disk usage exceeds the threshold
+if [ "$disk_usage" -gt "$threshold" ]; then
+    # Replace the echo statement with your preferred notification method
+    echo "Disk space usage is above $threshold% - Current usage: $disk_usage%"
+fi
+
+
+Email alert scripts
+==============================
+#!/bin/bash
+
+# Set the threshold value
+THRESHOLD=36
+
+# Get current disk usage percentage
+DISK_USAGE=$(df -h --output=pcent / | tail -n 1 | tr -d ' %')
+
+# Check if disk usage exceeds the threshold
+if [ "$DISK_USAGE" -lt "$THRESHOLD" ]; then
+    echo "Disk space is below ${THRESHOLD}%. Current usage: ${DISK_USAGE}%." | mail -s "Disk Space Alert" <YOUR_EMAIL>
+else
+    echo "Disk space is within acceptable limits. Current usage: ${DISK_USAGE}%."
+fi
+
+ 
+
+
+
+SSL Secure socket layer
+===========================
